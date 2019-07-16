@@ -1,0 +1,253 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .error {
+      display: none;
+      margin-left: 10px;
+    }
+
+    .error_show {
+      color: red;
+      margin-left: 10px;
+    }
+
+    input.invalid,
+    textarea.invalid {
+      border: 2px solid red;
+    }
+
+    input.valid,
+    textarea.valid {
+      border: 2px solid green;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+      .col-25,
+      .col-75,
+      input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+
+  <h1><img
+      src="https://www.accenture.com/t20180820T080700Z__w__/au-en/_acnmedia/Accenture/Dev/Redesign/Acc_Logo_Black_Purple_RGB.PNG"></img>
+    <br />
+    <br />
+    <b>myCloud Provisioning Form</b></h1>
+  <hr />
+  <h3>Easy access form to capture the necessary info for provisioning a serverless multicloud platform.</h3>
+
+  <div class="container">
+    <form id="cloud-requisition" action="/action_page.php">
+      <div class="row">
+        <div class="col-25">
+          <label for="provider">Platform Provider</label>
+        </div>
+        <div class="col-75">
+          <select id="provider" name="provider">
+            <option value="AWS">AWS</option>
+            <option value="AZURE">AZURE</option>
+            <option value="GCP">GCP</option>
+          </select>
+        </div>
+      </div>
+      <div id="region-group" class="row">
+        <div class="col-25">
+          <label for="region">Region (Default)</label>
+        </div>
+        <div class="col-75">
+          <select id="region" name="region">
+            <optgroup id="aws-region" label="AWS">
+              <option value="us-east-2">US East (Ohio)</option>
+              <option value="us-east-1">US East (N. Virginia)</option>
+              <option value="us-west-1">US West (N. California)</option>
+              <option value="us-west-2">US West (Oregon)</option>
+              <option value="ap-east-1">Asia Pacific (Hong Kong)</option>
+              <option value="ap-south-1">Asia Pacific (Mumbai)</option>
+              <option value="ap-northeast-2">Asia Pacific (Seoul)</option>
+              <option value="ap-southeast-1">Asia Pacific (Singapore)</option>
+              <option value="ap-southeast-2">Asia Pacific (Sydney)</option>
+              <option value="	ap-northeast-1">Asia Pacific (Tokyo)</option>
+              <option value="ca-central-1">Canada (Central)</option>
+              <option value="cn-north-1">China (Beijing)</option>
+              <option value="cn-northwest-1">China (Ningxia)</option>
+              <option value="eu-central-1">EU (Frankfurt)</option>
+              <option value="eu-west-1">EU (Ireland)</option>
+              <option value="eu-west-2">EU (London)</option>
+              <option value="eu-west-3">EU (Paris)</option>
+              <option value="eu-north-1">EU (Stockholm)</option>
+              <option value="sa-east-1">South America (São Paulo)</option>
+              <option value="us-gov-east-1">AWS GovCloud (US-East)</option>
+              <option value="us-gov-west-1">AWS GovCloud (US)</option>
+            </optgroup>
+            <optgroup id="azure-region" label="AZURE">
+              <option value="us-east-1">Central US</option>
+              <option value="us-east-1">East US 2</option>
+              <option value="us-east-1">North Central US</option>
+              <option value="us-east-1">South Central US</option>
+              <option value="us-east-1">West US 2</option>
+              <option value="us-east-1">West Central US</option>
+              <option value="us-east-1">West US</option>
+            </optgroup>
+            <optgroup id="gcp-region" label="GCP">
+              <option value="us-west-1">OREGON</option>
+              <option value="us-west2">LOS ANGELES</option>
+              <option value="us-central1">IOWA</option>
+              <option value="us-east1">SOUTH CAROLINA</option>
+              <option value="us-east4">N. VIRGINIA</option>
+              <option value="northamerica-northeast1">MONTRÉAL</option>
+              <option value="southamerica-east1">SÃO PAULO</option>
+              <option value="europe-west2">LONDON</option>
+              <option value="europe-west1">BELGIUM</option>
+              <option value="europe-west4">NETHERLANDS</option>
+              <option value="europe-west6">ZURICH</option>
+              <option value="europe-west3">FRANKFURT</option>
+              <option value="europe-north1">FINLAND</option>
+              <option value="asia-south1">MUMBAI</option>
+              <option value="asia-southeast1">SINGAPORE</option>
+              <option value="asia-east2">HONG KONG</option>
+              <option value="asia-east1">TAIWAN</option>
+              <option value="asia-northeast1">TOKYO</option>
+              <option value="asia-northeast2">OSAKA</option>
+              <option value="australia-southeast1">SYDNEY</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="instancename">Instance Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="iname" name="instancename" placeholder="Instance Name..">
+          <span class="error">This field is required</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="model">Machine Model</label>
+        </div>
+        <div class="col-75">
+          <select id="model" name="model">
+            <option value="micro">Micro</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="xlarge">XLarge</option>
+            <option value="2xlarge">2XLarge</option>
+          </select>
+        </div>
+      </div>
+      <input type="text" id="type" name="instancetype" hidden>
+
+      <div class="row">
+        <br />
+        <input id="submit-form" type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="js/fun.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
